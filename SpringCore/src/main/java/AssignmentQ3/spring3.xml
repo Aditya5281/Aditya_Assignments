@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+<context:component-scan base-package="AssignmentQ3" />
+
+<bean id="bankAccount" class="AssignmentQ3.BankAccount">
+	<property name="accountId" 			value="1" />
+	<property name="accountHolderName" 	value="Sagar" />
+	<property name="accountType" 		value="savings" />
+	<property name="accountBalance" 	value="10000" />
+</bean>
+<bean id="bankAccountepositoryImpl" class="AssignmentQ3.BankAccountepositoryImpl">
+
+</bean>
+
+<bean id="bankaccountServiceImpl" class="AssignmentQ3.BankAccountServiceImpl">
+
+</bean>
+
+
+<bean id="bankAccountController" class="AssignmentQ3.BankAccountController">
+	<property name="bankAccountServiceImpl" ref="bankaccountServiceImpl"/>
+	<property name="bankAccountRepoImpl" ref="bankAccountepositoryImpl"/>
+</bean>
+
+</beans>
